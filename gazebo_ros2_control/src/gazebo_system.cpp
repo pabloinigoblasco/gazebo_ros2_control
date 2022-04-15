@@ -204,13 +204,13 @@ void GazeboSystem::registerJoints(
     RCLCPP_INFO_STREAM(this->nh_->get_logger(), "\tState:");
 
     auto get_initial_value = [this](const hardware_interface::InterfaceInfo & interface_info) {
-        if (!interface_info.initial_value.empty()) {
-          double value = std::stod(interface_info.initial_value);
-          RCLCPP_INFO(this->nh_->get_logger(), "\t\t\t found initial value: %f", value);
-          return value;
-        } else {
+        // if (!interface_info.initial_value.empty()) {
+        //   double value = std::stod(interface_info.initial_value);
+        //   RCLCPP_INFO(this->nh_->get_logger(), "\t\t\t found initial value: %f", value);
+        //   return value;
+        // } else {
           return 0.0;
-        }
+        // }
       };
 
     double initial_position = std::numeric_limits<double>::quiet_NaN();
